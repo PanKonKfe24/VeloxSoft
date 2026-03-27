@@ -93,7 +93,7 @@ namespace VeloxSoft
             public static Color color6 = Color.FromArgb(190, 169, 114);
             public static Color color7 = Color.FromArgb(1, 178, 126);
             // Color de fondo para los botones activos y cambio de color en otros elementos
-            public static Color backColor1 = Color.FromArgb(191, 230, 99); 
+            public static Color backColor1 = Color.FromArgb(191, 230, 99);
         }
 
         private void DisableButton()
@@ -215,5 +215,9 @@ namespace VeloxSoft
             WindowState = FormWindowState.Minimized;
         }
 
+        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
