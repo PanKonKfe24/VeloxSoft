@@ -73,8 +73,9 @@
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
+            panelMenu.Margin = new Padding(3, 2, 3, 2);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 604);
+            panelMenu.Size = new Size(192, 453);
             panelMenu.TabIndex = 0;
             // 
             // btnCaja
@@ -88,10 +89,11 @@
             btnCaja.IconColor = Color.Black;
             btnCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCaja.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCaja.Location = new Point(0, 440);
+            btnCaja.Location = new Point(0, 375);
+            btnCaja.Margin = new Padding(3, 2, 3, 2);
             btnCaja.Name = "btnCaja";
-            btnCaja.Padding = new Padding(10, 0, 20, 0);
-            btnCaja.Size = new Size(220, 60);
+            btnCaja.Padding = new Padding(9, 0, 18, 0);
+            btnCaja.Size = new Size(192, 45);
             btnCaja.TabIndex = 7;
             btnCaja.Text = "Caja";
             btnCaja.TextAlign = ContentAlignment.MiddleLeft;
@@ -110,10 +112,11 @@
             btnCorte.IconColor = Color.Black;
             btnCorte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCorte.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCorte.Location = new Point(0, 380);
+            btnCorte.Location = new Point(0, 330);
+            btnCorte.Margin = new Padding(3, 2, 3, 2);
             btnCorte.Name = "btnCorte";
-            btnCorte.Padding = new Padding(10, 0, 20, 0);
-            btnCorte.Size = new Size(220, 60);
+            btnCorte.Padding = new Padding(9, 0, 18, 0);
+            btnCorte.Size = new Size(192, 45);
             btnCorte.TabIndex = 6;
             btnCorte.Text = "Corte";
             btnCorte.TextAlign = ContentAlignment.MiddleLeft;
@@ -132,10 +135,11 @@
             btnGastos.IconColor = Color.Black;
             btnGastos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGastos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGastos.Location = new Point(0, 320);
+            btnGastos.Location = new Point(0, 285);
+            btnGastos.Margin = new Padding(3, 2, 3, 2);
             btnGastos.Name = "btnGastos";
-            btnGastos.Padding = new Padding(10, 0, 20, 0);
-            btnGastos.Size = new Size(220, 60);
+            btnGastos.Padding = new Padding(9, 0, 18, 0);
+            btnGastos.Size = new Size(192, 45);
             btnGastos.TabIndex = 5;
             btnGastos.Text = "Gastos";
             btnGastos.TextAlign = ContentAlignment.MiddleLeft;
@@ -154,10 +158,11 @@
             btnVentas.IconColor = Color.Black;
             btnVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnVentas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVentas.Location = new Point(0, 260);
+            btnVentas.Location = new Point(0, 240);
+            btnVentas.Margin = new Padding(3, 2, 3, 2);
             btnVentas.Name = "btnVentas";
-            btnVentas.Padding = new Padding(10, 0, 20, 0);
-            btnVentas.Size = new Size(220, 60);
+            btnVentas.Padding = new Padding(9, 0, 18, 0);
+            btnVentas.Size = new Size(192, 45);
             btnVentas.TabIndex = 4;
             btnVentas.Text = "Ventas";
             btnVentas.TextAlign = ContentAlignment.MiddleLeft;
@@ -176,10 +181,11 @@
             btnClientes.IconColor = Color.Black;
             btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClientes.Location = new Point(0, 200);
+            btnClientes.Location = new Point(0, 195);
+            btnClientes.Margin = new Padding(3, 2, 3, 2);
             btnClientes.Name = "btnClientes";
-            btnClientes.Padding = new Padding(10, 0, 20, 0);
-            btnClientes.Size = new Size(220, 60);
+            btnClientes.Padding = new Padding(9, 0, 18, 0);
+            btnClientes.Size = new Size(192, 45);
             btnClientes.TabIndex = 3;
             btnClientes.Text = "Clientes";
             btnClientes.TextAlign = ContentAlignment.MiddleLeft;
@@ -198,10 +204,11 @@
             btnInventario.IconColor = Color.Black;
             btnInventario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnInventario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnInventario.Location = new Point(0, 140);
+            btnInventario.Location = new Point(0, 150);
+            btnInventario.Margin = new Padding(3, 2, 3, 2);
             btnInventario.Name = "btnInventario";
-            btnInventario.Padding = new Padding(10, 0, 20, 0);
-            btnInventario.Size = new Size(220, 60);
+            btnInventario.Padding = new Padding(9, 0, 18, 0);
+            btnInventario.Size = new Size(192, 45);
             btnInventario.TabIndex = 2;
             btnInventario.Text = "Inventario";
             btnInventario.TextAlign = ContentAlignment.MiddleLeft;
@@ -211,7 +218,6 @@
             // 
             // btnUsuarios
             // 
-            btnUsuarios.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             btnUsuarios.BackColor = Color.FromArgb(68, 154, 2);
             btnUsuarios.Dock = DockStyle.Top;
             btnUsuarios.FlatAppearance.BorderSize = 0;
@@ -221,10 +227,11 @@
             btnUsuarios.IconColor = Color.Black;
             btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsuarios.Location = new Point(0, 140);
+            btnUsuarios.Location = new Point(0, 105);
+            btnUsuarios.Margin = new Padding(3, 2, 3, 2);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Padding = new Padding(10, 0, 20, 0);
-            btnUsuarios.Size = new Size(220, 60);
+            btnUsuarios.Padding = new Padding(9, 0, 18, 0);
+            btnUsuarios.Size = new Size(192, 45);
             btnUsuarios.TabIndex = 1;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
@@ -238,18 +245,20 @@
             panelLogo.Controls.Add(btnInicio);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(3, 2, 3, 2);
             panelLogo.Name = "panelLogo";
-            panelLogo.Padding = new Padding(10, 0, 20, 0);
-            panelLogo.Size = new Size(220, 140);
+            panelLogo.Padding = new Padding(9, 0, 18, 0);
+            panelLogo.Size = new Size(192, 105);
             panelLogo.TabIndex = 0;
             // 
             // btnInicio
             // 
             btnInicio.BackColor = Color.FromArgb(68, 154, 2);
             btnInicio.Image = (Image)resources.GetObject("btnInicio.Image");
-            btnInicio.Location = new Point(-13, -12);
+            btnInicio.Location = new Point(-11, -9);
+            btnInicio.Margin = new Padding(3, 2, 3, 2);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(247, 179);
+            btnInicio.Size = new Size(216, 134);
             btnInicio.SizeMode = PictureBoxSizeMode.Zoom;
             btnInicio.TabIndex = 0;
             btnInicio.TabStop = false;
@@ -264,10 +273,12 @@
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(220, 0);
+            panelTitleBar.Location = new Point(192, 0);
+            panelTitleBar.Margin = new Padding(3, 2, 3, 2);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(755, 75);
+            panelTitleBar.Size = new Size(661, 57);
             panelTitleBar.TabIndex = 1;
+            panelTitleBar.Paint += panelTitleBar_Paint;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
             // btnMaximixed
@@ -280,10 +291,11 @@
             btnMaximixed.IconChar = FontAwesome.Sharp.IconChar.Maximize;
             btnMaximixed.IconColor = Color.DarkBlue;
             btnMaximixed.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnMaximixed.IconSize = 33;
-            btnMaximixed.Location = new Point(692, -2);
+            btnMaximixed.IconSize = 25;
+            btnMaximixed.Location = new Point(606, -2);
+            btnMaximixed.Margin = new Padding(3, 2, 3, 2);
             btnMaximixed.Name = "btnMaximixed";
-            btnMaximixed.Size = new Size(33, 33);
+            btnMaximixed.Size = new Size(29, 25);
             btnMaximixed.TabIndex = 4;
             btnMaximixed.TabStop = false;
             btnMaximixed.Click += btnMaximixed_Click;
@@ -298,10 +310,11 @@
             btnMinus.IconChar = FontAwesome.Sharp.IconChar.SquareMinus;
             btnMinus.IconColor = Color.Sienna;
             btnMinus.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnMinus.IconSize = 34;
-            btnMinus.Location = new Point(660, -3);
+            btnMinus.IconSize = 26;
+            btnMinus.Location = new Point(578, -2);
+            btnMinus.Margin = new Padding(3, 2, 3, 2);
             btnMinus.Name = "btnMinus";
-            btnMinus.Size = new Size(34, 34);
+            btnMinus.Size = new Size(30, 26);
             btnMinus.SizeMode = PictureBoxSizeMode.CenterImage;
             btnMinus.TabIndex = 3;
             btnMinus.TabStop = false;
@@ -317,10 +330,11 @@
             btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
             btnExit.IconColor = Color.DarkRed;
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnExit.IconSize = 39;
-            btnExit.Location = new Point(723, -5);
+            btnExit.IconSize = 29;
+            btnExit.Location = new Point(633, -4);
+            btnExit.Margin = new Padding(3, 2, 3, 2);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(39, 39);
+            btnExit.Size = new Size(34, 29);
             btnExit.SizeMode = PictureBoxSizeMode.CenterImage;
             btnExit.TabIndex = 2;
             btnExit.TabStop = false;
@@ -329,9 +343,9 @@
             // lblTitleChildForm
             // 
             lblTitleChildForm.Font = new Font("Segoe UI", 12F);
-            lblTitleChildForm.Location = new Point(70, 25);
+            lblTitleChildForm.Location = new Point(61, 19);
             lblTitleChildForm.Name = "lblTitleChildForm";
-            lblTitleChildForm.Size = new Size(102, 30);
+            lblTitleChildForm.Size = new Size(89, 22);
             lblTitleChildForm.TabIndex = 1;
             lblTitleChildForm.Text = "Home";
             // 
@@ -342,10 +356,11 @@
             iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
             iconCurrentChildForm.IconColor = SystemColors.ControlText;
             iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCurrentChildForm.IconSize = 37;
-            iconCurrentChildForm.Location = new Point(20, 20);
+            iconCurrentChildForm.IconSize = 28;
+            iconCurrentChildForm.Location = new Point(18, 15);
+            iconCurrentChildForm.Margin = new Padding(3, 2, 3, 2);
             iconCurrentChildForm.Name = "iconCurrentChildForm";
-            iconCurrentChildForm.Size = new Size(38, 37);
+            iconCurrentChildForm.Size = new Size(33, 28);
             iconCurrentChildForm.TabIndex = 0;
             iconCurrentChildForm.TabStop = false;
             // 
@@ -354,9 +369,10 @@
             panelDesktop.BackColor = Color.FromArgb(68, 154, 2);
             panelDesktop.Controls.Add(lblLogoDesktop);
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(220, 75);
+            panelDesktop.Location = new Point(192, 57);
+            panelDesktop.Margin = new Padding(3, 2, 3, 2);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(755, 529);
+            panelDesktop.Size = new Size(661, 396);
             panelDesktop.TabIndex = 2;
             // 
             // lblLogoDesktop
@@ -365,8 +381,9 @@
             lblLogoDesktop.Dock = DockStyle.Fill;
             lblLogoDesktop.Image = (Image)resources.GetObject("lblLogoDesktop.Image");
             lblLogoDesktop.Location = new Point(0, 0);
+            lblLogoDesktop.Margin = new Padding(3, 2, 3, 2);
             lblLogoDesktop.Name = "lblLogoDesktop";
-            lblLogoDesktop.Size = new Size(755, 529);
+            lblLogoDesktop.Size = new Size(661, 396);
             lblLogoDesktop.SizeMode = PictureBoxSizeMode.Zoom;
             lblLogoDesktop.TabIndex = 1;
             lblLogoDesktop.TabStop = false;
@@ -375,20 +392,23 @@
             // 
             panel1.BackColor = Color.FromArgb(68, 154, 1);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(220, 75);
+            panel1.Location = new Point(192, 57);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(755, 1);
+            panel1.Size = new Size(661, 1);
             panel1.TabIndex = 3;
             // 
             // FormMainMenu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(975, 604);
+            ClientSize = new Size(853, 453);
             Controls.Add(panel1);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormMainMenu";
             Text = "Form1";
             panelMenu.ResumeLayout(false);
