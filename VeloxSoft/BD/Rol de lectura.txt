@@ -1,0 +1,18 @@
+-- 1. Crear el rol (Global al servidor)
+CREATE ROLE lectura WITH LOGIN PASSWORD 'Lectura123';
+
+-- 1.1: Conexión a la BD específica
+GRANT CONNECT ON DATABASE "Fruteria7" TO lectura;
+
+-- IMPORTANTE: Aquí debes estar conectado a Fruteria7 para lo que sigue:
+
+-- 2. Permiso para "ver" el esquema public
+GRANT USAGE ON SCHEMA public TO lectura;
+
+-- 3. Permiso para leer lo que YA existe
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO lectura;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO lectura;
+
+-- 4. Permiso para lo que se cree en el FUTURO
+ALTER DEFAULT PRIVILEGES IN SCHEMA public 
+GRANT SELECT ON TABLES TO lectura;

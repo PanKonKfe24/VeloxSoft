@@ -1,0 +1,23 @@
+Para el cargar correctamente los archivos de roles y la base de datos es necesario que se realicen en este orden
+
+Antes de comenzar la exportación es necesario crear una base de datos vacia entro de posgres llamada Fruteria7 para que el paso 3 funcione si deciden ponerle otro nombre a la Base de datos el bash cambiara 
+
+Paso 1 
+Descargar los archivos roles y base de datos
+Paso extra para que funcione los 2 comando es necesario ingresar a la carpeta bin por lo que es necesario que ingresen este comando
+
+cd "C:\Program Files\PostgreSQL\16\bin" <----- el 16 indica la version que tienen instalado es necesario verificar cual tengan.
+
+Paso 2 
+Desde el cmd ejecutar este comando
+
+psql -U postgres -f roles_fruteria.sql
+
+Paso 3 
+Después de aver restaurado los roles se ejecutara el siguiente comando para cargar la base de datos
+
+psql -U postgres -d Fruteria7 -f contenido_fru7.sql
+
+Una vez realizado es necesario verificar si se realizaron los cambios.
+
+Dudas Contactarme a +52 984-537-2624

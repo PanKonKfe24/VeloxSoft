@@ -1,0 +1,15 @@
+crud
+-- Crear rol con límite de 10 conexiones
+CREATE ROLE crud WITH LOGIN PASSWORD 'Usuario7' CONNECTION LIMIT 10;
+
+-- Conexión y acceso al esquema
+GRANT CONNECT ON DATABASE "Fruteria7" TO crud;
+GRANT USAGE ON SCHEMA public TO crud;
+
+-- Permisos sobre TABLAS (Insertar y Editar, NO borrar)
+GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO crud;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE ON TABLES TO crud;
+
+-- Permisos sobre SECUENCIAS (Indispensable para el ID autoincrementable)
+GRANT USAGE ON ALL SEQUENCES IN SCHEMA public TO crud;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT USAGE ON SEQUENCES TO crud;
