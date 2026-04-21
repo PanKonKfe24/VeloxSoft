@@ -25,10 +25,16 @@ namespace VeloxSoft
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(10, 60);
             panelMenu.Controls.Add(leftBorderBtn);
-            // Form
+            // --- AGREGA ESTO PARA EL TAMAÑO ---
+            // Ajusta estos números al ancho y alto total de tu diseño
+            this.Size = new Size(1100, 700);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            // ----------------------------------
+
+            // Configuración estética del Form
             this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
+            this.ControlBox = false; // Quita los botones cerrar/min/max estándar
+            this.DoubleBuffered = true; // Evita el parpadeo al redimensionar
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
