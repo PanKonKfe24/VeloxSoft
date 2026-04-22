@@ -235,6 +235,11 @@ namespace VeloxSoft.Formularios
         {
             RedondearPanel((Panel)sender, e, 15);
         }
+
+        private void pnlUsuarios_Resize(object sender, EventArgs e)
+        {
+            pnlUsuarios.Invalidate();
+        }
     }
 
 

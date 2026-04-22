@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            pnlUsuarios = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             pnlLista = new Panel();
             pnlDetalles = new Panel();
@@ -46,7 +46,7 @@
             txtNombre = new TextBox();
             pnlRol = new Panel();
             txtRol = new TextBox();
-            panel1.SuspendLayout();
+            pnlUsuarios.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             pnlDetalles.SuspendLayout();
             pnlContenedorID.SuspendLayout();
@@ -54,16 +54,16 @@
             pnlRol.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pnlUsuarios
             // 
-            panel1.BackColor = Color.FromArgb(52, 133, 63);
-            panel1.Controls.Add(tableLayoutPanel1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1021, 522);
-            panel1.TabIndex = 0;
+            pnlUsuarios.BackColor = Color.FromArgb(52, 133, 63);
+            pnlUsuarios.Controls.Add(tableLayoutPanel1);
+            pnlUsuarios.Dock = DockStyle.Fill;
+            pnlUsuarios.Location = new Point(0, 0);
+            pnlUsuarios.Name = "pnlUsuarios";
+            pnlUsuarios.Size = new Size(1167, 696);
+            pnlUsuarios.TabIndex = 0;
+            pnlUsuarios.Resize += pnlUsuarios_Resize;
             // 
             // tableLayoutPanel1
             // 
@@ -75,20 +75,21 @@
             tableLayoutPanel1.Controls.Add(pnlDetalles, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1021, 522);
+            tableLayoutPanel1.Size = new Size(1167, 696);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // pnlLista
             // 
             pnlLista.BackColor = Color.FromArgb(192, 255, 192);
             pnlLista.Dock = DockStyle.Fill;
-            pnlLista.Location = new Point(688, 40);
-            pnlLista.Margin = new Padding(25, 40, 25, 200);
+            pnlLista.Location = new Point(787, 53);
+            pnlLista.Margin = new Padding(29, 53, 29, 267);
             pnlLista.Name = "pnlLista";
-            pnlLista.Size = new Size(308, 282);
+            pnlLista.Size = new Size(351, 376);
             pnlLista.TabIndex = 4;
             pnlLista.Paint += pnlLista_Paint;
             // 
@@ -108,10 +109,10 @@
             pnlDetalles.Controls.Add(pnlRol);
             pnlDetalles.Dock = DockStyle.Fill;
             pnlDetalles.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            pnlDetalles.Location = new Point(20, 20);
-            pnlDetalles.Margin = new Padding(20);
+            pnlDetalles.Location = new Point(23, 27);
+            pnlDetalles.Margin = new Padding(23, 27, 23, 27);
             pnlDetalles.Name = "pnlDetalles";
-            pnlDetalles.Size = new Size(623, 482);
+            pnlDetalles.Size = new Size(712, 642);
             pnlDetalles.TabIndex = 2;
             pnlDetalles.Paint += pnlDetalles_Paint;
             // 
@@ -127,9 +128,10 @@
             btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBuscar.IconSize = 20;
             btnBuscar.ImageAlign = ContentAlignment.BottomLeft;
-            btnBuscar.Location = new Point(403, 63);
+            btnBuscar.Location = new Point(461, 84);
+            btnBuscar.Margin = new Padding(3, 4, 3, 4);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(101, 28);
+            btnBuscar.Size = new Size(115, 37);
             btnBuscar.TabIndex = 13;
             btnBuscar.Text = "BUSCAR";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -148,9 +150,10 @@
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminar.IconSize = 20;
             btnEliminar.ImageAlign = ContentAlignment.BottomLeft;
-            btnEliminar.Location = new Point(292, 271);
+            btnEliminar.Location = new Point(334, 361);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(104, 31);
+            btnEliminar.Size = new Size(119, 41);
             btnEliminar.TabIndex = 12;
             btnEliminar.Text = "ELIMINAR";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -168,9 +171,10 @@
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.IconSize = 20;
             btnGuardar.ImageAlign = ContentAlignment.BottomLeft;
-            btnGuardar.Location = new Point(156, 271);
+            btnGuardar.Location = new Point(178, 361);
+            btnGuardar.Margin = new Padding(3, 4, 3, 4);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(104, 31);
+            btnGuardar.Size = new Size(119, 41);
             btnGuardar.TabIndex = 11;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -188,9 +192,10 @@
             btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNuevo.IconSize = 20;
             btnNuevo.ImageAlign = ContentAlignment.BottomLeft;
-            btnNuevo.Location = new Point(15, 271);
+            btnNuevo.Location = new Point(17, 361);
+            btnNuevo.Margin = new Padding(3, 4, 3, 4);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(104, 31);
+            btnNuevo.Size = new Size(119, 41);
             btnNuevo.TabIndex = 10;
             btnNuevo.Text = "NUEVO";
             btnNuevo.UseVisualStyleBackColor = false;
@@ -200,9 +205,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(92, 148);
+            label3.Location = new Point(105, 197);
             label3.Name = "label3";
-            label3.Size = new Size(46, 25);
+            label3.Size = new Size(58, 32);
             label3.TabIndex = 3;
             label3.Text = "Rol:";
             // 
@@ -210,9 +215,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(44, 105);
+            label2.Location = new Point(50, 140);
             label2.Name = "label2";
-            label2.Size = new Size(96, 25);
+            label2.Size = new Size(122, 32);
             label2.TabIndex = 2;
             label2.Text = "Nombre: ";
             // 
@@ -220,9 +225,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 63);
+            label1.Location = new Point(3, 84);
             label1.Name = "label1";
-            label1.Size = new Size(131, 25);
+            label1.Size = new Size(166, 32);
             label1.TabIndex = 1;
             label1.Text = "ID USUARIO: ";
             // 
@@ -230,9 +235,9 @@
             // 
             txtTitulo.AutoSize = true;
             txtTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtTitulo.Location = new Point(18, 9);
+            txtTitulo.Location = new Point(21, 12);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(200, 32);
+            txtTitulo.Size = new Size(247, 41);
             txtTitulo.TabIndex = 0;
             txtTitulo.Text = "Detalles Usuario";
             // 
@@ -240,9 +245,10 @@
             // 
             pnlContenedorID.BackColor = Color.White;
             pnlContenedorID.Controls.Add(txtID);
-            pnlContenedorID.Location = new Point(156, 63);
+            pnlContenedorID.Location = new Point(178, 84);
+            pnlContenedorID.Margin = new Padding(3, 4, 3, 4);
             pnlContenedorID.Name = "pnlContenedorID";
-            pnlContenedorID.Size = new Size(240, 36);
+            pnlContenedorID.Size = new Size(274, 48);
             pnlContenedorID.TabIndex = 14;
             pnlContenedorID.Paint += pnlContenedorID_Paint;
             // 
@@ -250,9 +256,10 @@
             // 
             txtID.BorderStyle = BorderStyle.None;
             txtID.Cursor = Cursors.IBeam;
-            txtID.Location = new Point(3, 9);
+            txtID.Location = new Point(3, 12);
+            txtID.Margin = new Padding(3, 4, 3, 4);
             txtID.Name = "txtID";
-            txtID.Size = new Size(221, 16);
+            txtID.Size = new Size(253, 20);
             txtID.TabIndex = 4;
             txtID.KeyDown += textID_KeyDown;
             // 
@@ -261,18 +268,20 @@
             pnlNombre.BackColor = Color.White;
             pnlNombre.Controls.Add(txtNombre);
             pnlNombre.Cursor = Cursors.IBeam;
-            pnlNombre.Location = new Point(156, 105);
+            pnlNombre.Location = new Point(178, 140);
+            pnlNombre.Margin = new Padding(3, 4, 3, 4);
             pnlNombre.Name = "pnlNombre";
-            pnlNombre.Size = new Size(240, 37);
+            pnlNombre.Size = new Size(274, 49);
             pnlNombre.TabIndex = 15;
             pnlNombre.Paint += pnlNombre_Paint;
             // 
             // txtNombre
             // 
             txtNombre.BorderStyle = BorderStyle.None;
-            txtNombre.Location = new Point(3, 5);
+            txtNombre.Location = new Point(3, 7);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(224, 16);
+            txtNombre.Size = new Size(256, 20);
             txtNombre.TabIndex = 5;
             txtNombre.TextChanged += txtNombre_TextChanged_1;
             // 
@@ -281,31 +290,32 @@
             pnlRol.BackColor = Color.White;
             pnlRol.Controls.Add(txtRol);
             pnlRol.Cursor = Cursors.IBeam;
-            pnlRol.Location = new Point(156, 148);
+            pnlRol.Location = new Point(178, 197);
+            pnlRol.Margin = new Padding(3, 4, 3, 4);
             pnlRol.Name = "pnlRol";
-            pnlRol.Size = new Size(240, 34);
+            pnlRol.Size = new Size(274, 45);
             pnlRol.TabIndex = 16;
             pnlRol.Paint += pnlRol_Paint;
             // 
             // txtRol
             // 
             txtRol.BorderStyle = BorderStyle.None;
-            txtRol.Location = new Point(3, 5);
+            txtRol.Location = new Point(3, 7);
+            txtRol.Margin = new Padding(3, 4, 3, 4);
             txtRol.Name = "txtRol";
-            txtRol.Size = new Size(224, 16);
+            txtRol.Size = new Size(256, 20);
             txtRol.TabIndex = 6;
             txtRol.TextChanged += txtRol_TextChanged_1;
             // 
             // FormUsuarios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1021, 522);
-            Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
+            ClientSize = new Size(1167, 696);
+            Controls.Add(pnlUsuarios);
             Name = "FormUsuarios";
             Text = "Testt";
-            panel1.ResumeLayout(false);
+            pnlUsuarios.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             pnlDetalles.ResumeLayout(false);
             pnlDetalles.PerformLayout();
@@ -320,7 +330,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlUsuarios;
         private Label label1;
         private Panel pnlNombre;
         private PictureBox pictureBox1;
