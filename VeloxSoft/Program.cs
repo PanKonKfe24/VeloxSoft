@@ -1,6 +1,8 @@
 ﻿using VeloxSoft.Formularios;
 using Microsoft.Extensions.Configuration;
 using VeloxSoft.Config;
+using VeloxSoft.Services;
+using VeloxSoft.Models;
 
 namespace VeloxSoft
 {
@@ -8,6 +10,8 @@ namespace VeloxSoft
     {
 
         public static IConfiguration config { get; private set; }
+        public static Usuario UsuarioLogueado { get; set; }
+        public static Roles RolActual { get; set; }
 
         /// <summary>
         ///  The main entry point for the application.
@@ -23,11 +27,12 @@ namespace VeloxSoft
                 .SetBasePath(AppContext.BaseDirectory)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
-
+            // Creamos las instancias necesarias para los servicios.
             var dbConfig = new DatabaseConfig(config);
+            var AutenticarUsuario = new AutenticarUsuario(dbConfig);
 
             // Creamos el formulario de Login
-            FormLogIn login = new FormLogIn();
+            FormLogIn login = new FormLogIn(AutenticarUsuario);
 
             // Si el Login se cierra con un resultado "OK", iniciamos el menú
             if (login.ShowDialog() == DialogResult.OK)

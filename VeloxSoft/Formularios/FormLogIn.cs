@@ -6,15 +6,21 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using VeloxSoft.Services;
+using VeloxSoft.Config;
+using VeloxSoft.Models;
 
 namespace VeloxSoft.Formularios
 {
     public partial class FormLogIn : Form
     {
-        public FormLogIn()
+        private readonly AutenticarUsuario _autenticarUsuario;
+
+        public FormLogIn(AutenticarUsuario autenticarUsuario)
         {
             InitializeComponent();
             LabelSalir.BringToFront();
+            _autenticarUsuario = autenticarUsuario;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -48,8 +54,32 @@ namespace VeloxSoft.Formularios
 
         private void LogInButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            Usuario usuario = new Usuario();
+            string errorMessage;
+            string Id = TxtUsuario.Text;
+            string Password = TxtPassword.Text;
+            MessageBox.Show("Se dio click en el boton", "Click");
+            if (Id != string.Empty && Password != string.Empty)
+            {
+                usuario = _autenticarUsuario.Autenticar(Id, Password, out errorMessage);
+            }
+
+
+            if (usuario.Nombre != "Error")
+            {
+                MessageBox.Show("Inicio ", "ta bn");
+                Program.UsuarioLogueado = usuario;
+                Program.RolActual = ObtenerRolEnum.ObtenerRol(usuario.Rol);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+
+        }
+
+        private void NavPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
