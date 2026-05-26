@@ -25,6 +25,11 @@ namespace VeloxSoft
         private Form currentChildForm;
         private IconPictureBox currentIcon;
 
+        // Campos para información del usuario
+        private Panel _panelUsuario;
+        private Label _lblNombreUsuario;
+        private Label _lblRolUsuario;
+
 
         // Constructor
         public FormMainMenu(ServicioInventario ServicioInventario, ServicioUsuarios ServicioUsuarios, ServicioClientes ServicioClientes, ServicioVentas ServicioVentas, ServicioCorte ServicioCorte, ServicioGasto ServicioGasto, ServicioCaja ServicioCaja)
@@ -39,6 +44,9 @@ namespace VeloxSoft
             _ServicioCaja = ServicioCaja;
             //Fin de Instancias de servicios
             InitializeComponent();
+            InicializarPanelUsuario();
+
+
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(10, 60);
             panelMenu.Controls.Add(leftBorderBtn);
@@ -66,6 +74,68 @@ namespace VeloxSoft
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
 
+
+        }
+
+        private void InicializarPanelUsuario()
+        {
+            // Panel contenedor
+            _panelUsuario = new Panel
+            {
+                BackColor = Color.FromArgb(15, 40, 30),
+                Dock = DockStyle.Bottom,
+                Height = 72,
+                Padding = new Padding(12, 8, 12, 8)
+            };
+
+            // Icono
+            Label lblIcono = new Label
+            {
+                Text = "👤",
+                Font = new Font("Segoe UI Emoji", 18f),
+                ForeColor = Color.White,
+                Location = new Point(10, 14),
+                Size = new Size(38, 38),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+
+            // Nombre
+            _lblNombreUsuario = new Label
+            {
+                Text = Program.UsuarioLogueado.Nombre,
+                Font = new Font("Segoe UI", 10f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(149, 213, 178),
+                Location = new Point(54, 14),
+                Size = new Size(180, 20),
+                AutoEllipsis = true
+            };
+
+            // Rol
+            _lblRolUsuario = new Label
+            {
+                Text = Program.UsuarioLogueado.Rol switch
+                {
+                    "0" => "Gerente",
+                    "1" => "Administrador",
+                    "2" => "Cajero",
+                    _ => "Desconocido"
+                },
+                Font = new Font("Segoe UI", 8.5f),
+                ForeColor = Color.FromArgb(100, 160, 130),
+                Location = new Point(54, 36),
+                Size = new Size(180, 18),
+                AutoEllipsis = true
+            };
+
+
+            _panelUsuario.Controls.Add(lblIcono);
+            _panelUsuario.Controls.Add(_lblNombreUsuario);
+            _panelUsuario.Controls.Add(_lblRolUsuario);
+
+            panelMenu.Controls.Add(_panelUsuario);
+
+            // Mantenerlo al frente
+            _panelUsuario.BringToFront();
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -99,6 +169,7 @@ namespace VeloxSoft
                 btnInicio.BackColor = RGBColors.backColor1;
             }
         }
+
 
         private void OpenChildForm(Form childForm)
         {
