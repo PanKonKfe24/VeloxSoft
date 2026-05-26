@@ -7,7 +7,7 @@ namespace VeloxSoft.Models
     public class DetallesVenta
     {
         public int IdDetalleVenta { get; set; }
-        public int Cantidad { get; set; }
+        public decimal Cantidad { get; set; }
         public decimal ImporteP { get; set; }
         public long NVenta { get; set; }       
         public string IdProd { get; set; }

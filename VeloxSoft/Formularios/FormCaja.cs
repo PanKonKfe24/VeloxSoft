@@ -17,7 +17,7 @@ namespace VeloxSoft.Formularios
         private readonly ServicioCaja _ServicioCaja;
 
         // Datos de prueba productos
-        
+
 
         public FormCaja(ServicioCaja servicioCaja)
         {
@@ -98,6 +98,23 @@ namespace VeloxSoft.Formularios
             nudCantidad.Value = 1;
             lblUnidad.Text = _productoSeleccionado.IdCategoria;
             lstSugerencias.Visible = false;
+
+            if (_productoSeleccionado.IdCategoria == "PZ")
+            {
+                // Valida que el texto sea un número entero válido
+                if (!int.TryParse(txtBuscar.Text, out int cantidadEntera))
+                {
+                    nudCantidad.DecimalPlaces = 0;
+                    nudCantidad.Increment = 1;
+
+                }
+            }
+            else
+            {
+                nudCantidad.DecimalPlaces = 2;
+                nudCantidad.Increment = 0.25M;
+            }
+
         }
         // ── BÚSQUEDA CLIENTE ─────────────────────────────────────
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -174,6 +191,8 @@ namespace VeloxSoft.Formularios
                 lblInfoId.Text = "";
                 e.Handled = true;
             }
+
+
         }
         private void CargarMetodosPago()
         {
@@ -278,9 +297,14 @@ namespace VeloxSoft.Formularios
                 return;
             }
 
-            string usuario = _clienteSeleccionado?.Nombre ?? "Sin usuario";
+            string usuario = _clienteSeleccionado?.Nombre ?? "Sin Usuario";
+            long LongCliente = _clienteSeleccionado?.IdCliente ?? 1000000001;
             string metodo = cbMetodoPago.SelectedItem?.ToString() ?? "Efectivo";
             decimal total = _carrito.Sum(c => c.Subtotal);
+            long LongUsuario = Convert.ToInt64(Program.UsuarioLogueado.Id);
+            string estado = checkCaja.Checked ? "Pendiente" : "Entregado";
+            decimal cantidadTotal = _carrito.Sum(c => c.Cantidad);
+            decimal totalPagar = _carrito.Sum(c => c.Subtotal);
 
             string resumen = string.Join("\n", _carrito.Select(c =>
                 $"  {c.Nombre} x{c.Cantidad} {c.Unidad} = ${c.Subtotal:F2}"));
@@ -291,9 +315,10 @@ namespace VeloxSoft.Formularios
 
             if (resultado == DialogResult.Yes)
             {
-                // Aquí guardarás en BD cuando conectes
-                MessageBox.Show("¡Venta guardada correctamente!", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                _ServicioCaja.Insertar_Venta(_carrito, cantidadTotal, totalPagar, LongCliente, LongUsuario, metodo, estado, out string errorMessage);
+                MessageBox.Show(errorMessage == null ? "Venta registrada exitosamente." : $"Error al registrar venta: {errorMessage}",
+                    "Resultado", MessageBoxButtons.OK, errorMessage == null ? MessageBoxIcon.Information : MessageBoxIcon.Error);
                 LimpiarTodo();
             }
         }
@@ -481,7 +506,7 @@ namespace VeloxSoft.Formularios
             lblUsuario.Location = new Point(26, 55);
             txtUsuario.Location = new Point(26, 83);
             lstSugerencias2.Location = new Point(26, 121);
-                
+
             // Producto debajo del usuario
             lblBuscar.Location = new Point(26, 255);
             txtBuscar.Location = new Point(26, 283);
@@ -504,5 +529,19 @@ namespace VeloxSoft.Formularios
             btnLimpiar.Location = new Point(26, 890);
         }
 
+        private void nudCantidad_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (_productoSeleccionado == null) return;
+
+            if (_productoSeleccionado.IdCategoria == "PZ")
+            {
+                // Si el usuario escribió un decimal a la fuerza
+                if (nudCantidad.Value % 1 != 0)
+                {
+                    nudCantidad.Value = Math.Floor(nudCantidad.Value);
+                    MostrarError("Solo se permiten cantidades enteras para este producto.");
+                }
+            }
+        }
     }
 }

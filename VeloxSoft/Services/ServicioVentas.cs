@@ -149,7 +149,7 @@ namespace VeloxSoft.Services
                     Detalleslista.Add(new DetallesVenta
                     {
                         IdDetalleVenta = reader.GetInt32(0),
-                        Cantidad = reader.GetInt32(1),
+                        Cantidad = reader.GetDecimal(1),
                         ImporteP = reader.GetDecimal(2),
                         NVenta = reader.GetInt64(3),
                         IdProd = reader.GetString(4),
@@ -169,7 +169,6 @@ namespace VeloxSoft.Services
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                MessageBox.Show(e.Message);
                 errorMessage = "Error Inesperado";
                 return new List<DetallesVenta>();
             }

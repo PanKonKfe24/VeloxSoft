@@ -136,7 +136,7 @@ namespace VeloxSoft.Services
 
         public List<Producto> Buscar_Productos(string id, string categoria, string estado, out string errorMessage)
         {
-            MessageBox.Show($"id: '{id}'\ncategoria: '{categoria}'\nestado: '{estado}'");
+            
             errorMessage = null;
             try
             {

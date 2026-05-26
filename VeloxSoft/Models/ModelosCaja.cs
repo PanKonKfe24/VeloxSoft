@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VeloxSoft
+namespace VeloxSoft.Models
 {
     public class ProductoCatalogo
     {

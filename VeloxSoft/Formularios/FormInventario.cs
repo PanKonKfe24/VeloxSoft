@@ -403,9 +403,7 @@ namespace VeloxSoft.Formularios
                     categoria = "KL";
                 }
 
-                // DEBUG - borrar después
-                MessageBox.Show($"ID: {textID.Text.Trim()}\nNombre: {lblNombre.Text.Trim()}\nCantidad: {cantidad}\nPrecio: {precio}\nCategoria: {categoria}");
-
+                
                 // 4. Llamar al servicio para insertar el producto
                 string mensaje = _ServicioInventario.Insertar_Producto(textID.Text.Trim(), textNombre.Text.Trim(), cantidad, precio, categoria, out string errorMessage);
 
@@ -719,11 +717,6 @@ namespace VeloxSoft.Formularios
 
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
-
-            if (textID.Text.Length >= 4)
-            {
-                e.Handled = true;
-            }
         }
 
         private void textStock_KeyPress(object sender, KeyPressEventArgs e)

@@ -32,7 +32,7 @@ namespace VeloxSoft.Formularios
                     detalle.IdProd,
                     detalle.Producto.Nombre,
                     $"${detalle.Producto.Precio.ToString("F2")}",
-                    detalle.Cantidad,
+                    detalle.Cantidad.ToString("F2"),
                     $"${detalle.ImporteP.ToString("F2")}"
                 );
             }

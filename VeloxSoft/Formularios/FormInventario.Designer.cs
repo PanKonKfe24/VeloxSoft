@@ -530,6 +530,7 @@
             textID.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textID.ForeColor = Color.DimGray;
             textID.Location = new Point(77, 84);
+            textID.MaxLength = 30;
             textID.Name = "textID";
             textID.PlaceholderText = "Ej: 4011";
             textID.Size = new Size(300, 32);
